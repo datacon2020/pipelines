@@ -1,0 +1,37 @@
+## Note: if you get an error you might need to change the execution policy (i.e. enable Powershell) with
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+
+## NOTE: install to specified folder 'c:\scoop'
+## https://techformist.com/install-scoop-for-command-line-nirvana/
+$env:SCOOP='c:\scoop'
+[environment]::setEnvironmentVariable('SCOOP',$env:SCOOP,'User')
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+
+scoop install git
+
+# make Symlinks in Windows available
+## https://stackoverflow.com/questions/32847697/windows-specific-git-configuration-settings-where-are-they-set/32849199#32849199
+## https://www.joshkel.com/2018/01/18/symlinks-in-windows/
+[environment]::setEnvironmentVariable('MSYS','winsymlinks:nativestrict','User')
+
+## add scoop bucket
+
+scoop bucket add extras
+scoop bucket add jazzwang https://github.com/jazzwang/scoop-bucket
+
+## Install Python Embedded and PIP
+
+scoop install python-embed
+
+## Install youtube-dl
+
+pip install youtube-dl
+
+## Install Webcamoid
+
+scoop install webcamoid-portable
+
+## Configure Time Zone to Taipei (GMT+8)
+
+Get-TimeZone -Name "*Taipei*"
+Set-TimeZone -Name "Taipei Standard Time"
