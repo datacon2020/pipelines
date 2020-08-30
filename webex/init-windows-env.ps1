@@ -16,20 +16,23 @@ scoop install git
 
 ## add scoop bucket
 
+scoop bucket add java
 scoop bucket add extras
 scoop bucket add jazzwang https://github.com/jazzwang/scoop-bucket
+
+scoop install wget
+
+## Install Chrome
+
+scoop install googlechrome
+
+## Install Java
+
+scoop install ojdkbuild8-full
 
 ## Install Python Embedded and PIP
 
 scoop install python-embed
-
-## Install youtube-dl
-
-pip install youtube-dl
-
-## Install Webcamoid
-
-scoop install webcamoid-portable
 
 ## Configure Time Zone to Taipei (GMT+8)
 
