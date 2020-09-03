@@ -52,3 +52,24 @@ Start-Process -Filepath "webexapp.msi"
 ## IE trusted site
 ## https://tdea.my.webex.com
 ## https://idbroker-b-us.webex.com
+## https://stackoverflow.com/questions/27359636/change-internet-explorer-security-settings-for-trusted-domains-using-powershell
+
+#Setting IExplorer settings
+Write-Verbose "Now configuring IE"
+#Add http://website.com as a trusted Site/Domain
+#Navigate to the domains folder in the registry
+set-location "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+set-location ZoneMap\Domains
+
+#Create a new folder with the website name
+new-item website/ -Force
+set-location website/
+new-itemproperty . -Name * -Value 2 -Type DWORD -Force
+new-itemproperty . -Name http -Value 2 -Type DWORD -Force
+new-itemproperty . -Name https -Value 2 -Type DWORD -Force
+
+#Navigate to the trusted domains folder in the registry:
+
+#Go to registry folder for Trusted Domains
+#Zone 2 in this case resembles the trusted domains (Or zones if you'd prefer)
+Set-Location "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\zones\2"
