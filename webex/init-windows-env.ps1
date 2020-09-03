@@ -38,3 +38,13 @@ scoop install python-embed
 
 Get-TimeZone -Name "*Taipei*"
 Set-TimeZone -Name "Taipei Standard Time"
+
+## Install WebEx
+
+# https://stackoverflow.com/questions/47110728/powershell-download-and-run-exe-file/47111562
+
+$url = ""
+$outpath = ""
+Invoke-WebRequest -Uri $url -OutFile $outpath
+
+Start-Process -Filepath ""
