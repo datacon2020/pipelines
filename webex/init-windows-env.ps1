@@ -26,9 +26,11 @@ scoop install wget
 
 scoop install googlechrome
 
-## Install Java
+### make google chrome as default browser
+chrome.exe --make-default-browser
 
-scoop install ojdkbuild8-full
+## Install Java
+# scoop install ojdkbuild8-full
 
 ## Install Python Embedded and PIP
 
@@ -38,16 +40,6 @@ scoop install python-embed
 
 Get-TimeZone -Name "*Taipei*"
 Set-TimeZone -Name "Taipei Standard Time"
-
-## Install WebEx
-
-# https://stackoverflow.com/questions/47110728/powershell-download-and-run-exe-file/47111562
-
-$url = "https://akamaicdn.webex.com/client/WBXclient-40.8.9-15/webexapp.msi"
-$outpath = "webexapp.msi"
-Invoke-WebRequest -Uri $url -OutFile $outpath
-
-Start-Process -Filepath "webexapp.msi"
 
 ## IE trusted site
 ## https://tdea.my.webex.com
@@ -62,14 +54,15 @@ set-location "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
 set-location ZoneMap\Domains
 
 #Create a new folder with the website name
-new-item website/ -Force
-set-location website/
+new-item webex.com/ -Force
+set-location webex.com/
 new-itemproperty . -Name * -Value 2 -Type DWORD -Force
 new-itemproperty . -Name http -Value 2 -Type DWORD -Force
 new-itemproperty . -Name https -Value 2 -Type DWORD -Force
 
-#Navigate to the trusted domains folder in the registry:
-
-#Go to registry folder for Trusted Domains
-#Zone 2 in this case resembles the trusted domains (Or zones if you'd prefer)
-Set-Location "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\zones\2"
+## Install WebEx
+# https://stackoverflow.com/questions/47110728/powershell-download-and-run-exe-file/47111562
+$url = "https://akamaicdn.webex.com/client/WBXclient-40.8.9-15/webexapp.msi"
+$outpath = "webexapp.msi"
+Invoke-WebRequest -Uri $url -OutFile $outpath
+Start-Process -Filepath "webexapp.msi"
