@@ -43,8 +43,12 @@ Set-TimeZone -Name "Taipei Standard Time"
 
 # https://stackoverflow.com/questions/47110728/powershell-download-and-run-exe-file/47111562
 
-$url = ""
-$outpath = ""
+$url = "https://akamaicdn.webex.com/client/WBXclient-40.8.9-15/webexapp.msi"
+$outpath = "webexapp.msi"
 Invoke-WebRequest -Uri $url -OutFile $outpath
 
-Start-Process -Filepath ""
+Start-Process -Filepath "webexapp.msi"
+
+## IE trusted site
+## https://tdea.my.webex.com
+## https://idbroker-b-us.webex.com
