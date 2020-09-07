@@ -36,6 +36,16 @@ chrome.exe --make-default-browser
 
 scoop install python-embed
 
+## WebEx Automation tool
+pip install ipython selenium webdriver-manager bs4 lxml pywinauto
+
+## Install Streamlab-OBS (with virtual webcam)
+## https://blog.streamlabs.com/streamlabs-obs-now-supports-virtual-camera-9a4e464435c2
+## scoop install streamlabs-obs
+
+## NOTE: 2020-09-04 - use streamlabs instead
+## https://blog.streamlabs.com/streamlabs-obs-now-supports-virtual-camera-9a4e464435c2?gi=3e5bfc5e3fff
+
 ## Configure Time Zone to Taipei (GMT+8)
 
 Get-TimeZone -Name "*Taipei*"
