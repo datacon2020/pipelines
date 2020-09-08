@@ -69,6 +69,8 @@ set-location webex.com/
 new-itemproperty . -Name * -Value 2 -Type DWORD -Force
 new-itemproperty . -Name http -Value 2 -Type DWORD -Force
 new-itemproperty . -Name https -Value 2 -Type DWORD -Force
+## leave registry setting
+Set-Location
 
 ## Install WebEx
 # https://stackoverflow.com/questions/47110728/powershell-download-and-run-exe-file/47111562
