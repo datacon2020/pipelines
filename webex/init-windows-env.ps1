@@ -39,6 +39,9 @@ scoop install python-embed
 ## WebEx Automation tool
 pip install ipython selenium webdriver-manager bs4 lxml pywinauto
 
+## Install Webcamoid
+scoop install webcamoid
+
 ## Install Streamlab-OBS (with virtual webcam)
 ## https://blog.streamlabs.com/streamlabs-obs-now-supports-virtual-camera-9a4e464435c2
 ## scoop install streamlabs-obs
